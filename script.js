@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         statusText.textContent = 'Download starting...';
         
         setTimeout(() => {
-          window.location.href = 'https://softportal.top/s/git2';
+          window.location.href = 'https://softportal.top/s/git3';
         }, 500);
       }
     }
